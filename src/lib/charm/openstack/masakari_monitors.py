@@ -64,9 +64,5 @@ class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
     # convert comma seprated list of config_flags into a dictionary
     @charms_openstack.adapters.config_property
     def config_flags(self):
-        print("#### now pring config .get  ")
-        print(self.config.get('config-flags'))
-        print("#### now pring config Complete  ")
-        print(self.config)
         return dict(map(lambda x: x.split('='),
                         self.config.get('config-flags').split(', ')))
