@@ -54,7 +54,7 @@ class TestMasakariMonitorsCharm(Helper):
 
     def test_config_flags(self,config):
         charm = self._patch_config_and_charm({'a': 'b'})
-        config =  charm.config_flags()
+        config =  charm.config_flags(config)
         # Add check here that configuration is as expected.
         self.assertEqual(config, [('key1', "value1"),
                                   ('key2', "value2")])
