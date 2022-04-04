@@ -14,7 +14,6 @@ def hostname(config):
     return socket.getfqdn()
 
 
-
 class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
 
     # Internal name of charm
@@ -62,7 +61,6 @@ class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
     def install(self):
         super(MasakariMonitorsCharm, self).install()
 
-
     # convert comma seprated list of config_flags into a dictionary
     @charms_openstack.adapters.config_property
     def config_flags(self):
@@ -71,4 +69,3 @@ class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
         print("#### now pring config Complete  ")
         print(self.config)
         return dict(map(lambda x: x.split('='), self.config.get('config-flags').split(', ')))
-
