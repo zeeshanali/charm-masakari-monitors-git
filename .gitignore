@@ -6,3 +6,5 @@ trusty
 .testrepository
 __pycache__
 .stestr
+.idea/charm-masakari-monitors-git.iml
+*.xml

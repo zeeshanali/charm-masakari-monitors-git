@@ -14,11 +14,6 @@ def hostname(config):
     return socket.getfqdn()
 
 
-# convert comma seprated list of config_flags into a dictionary
-@charms_openstack.adapters.config_property
-def config_flags(config):
-    return dict(map(lambda x: x.split('='), config.config_flags.split(', ')))
-
 
 class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
 
@@ -66,3 +61,10 @@ class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
 
     def install(self):
         super(MasakariMonitorsCharm, self).install()
+
+
+    # convert comma seprated list of config_flags into a dictionary
+    @charms_openstack.adapters.config_property
+    def config_flags(self):
+        return dict(map(lambda x: x.split('='), self.config.get('config_flags').split(', ')))
+
