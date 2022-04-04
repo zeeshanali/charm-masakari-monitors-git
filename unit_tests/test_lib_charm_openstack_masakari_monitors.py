@@ -52,9 +52,9 @@ class TestMasakariMonitorsCharm(Helper):
         keystone_relation.request_credentials.assert_called_once_with(
             'masakari-monitors', project='services')
 
-    def test_config_flags(self,config):
+    def test_config_flags(self):
         charm = self._patch_config_and_charm({'a': 'b'})
-        config =  charm.config_flags(config)
+        config =  charm.config_flags()
         # Add check here that configuration is as expected.
         self.assertEqual(config, [('key1', "value1"),
                                   ('key2', "value2")])
