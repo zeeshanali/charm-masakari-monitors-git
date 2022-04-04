@@ -18,12 +18,6 @@ import charmhelpers
 
 import charm.openstack.masakari_monitors as masakari_monitors
 
-from hooks.charmhelpers.core.hookenv import config
-from src.lib.charm.openstack.masakari_monitors import config_flags
-
-
-
-
 import charms_openstack.test_utils as test_utils
 
 
@@ -57,10 +51,3 @@ class TestMasakariMonitorsCharm(Helper):
         c.request_credentials()
         keystone_relation.request_credentials.assert_called_once_with(
             'masakari-monitors', project='services')
-
-    def Test_config_flags(self):
-        actual = config_flags(config).get('key1')
-        expected = 'value1'
-        self.assertEqual(actual, expected)
-
-

@@ -13,7 +13,8 @@ charms_openstack.charm.use_defaults('charm.default-select-release')
 def hostname(config):
     return socket.getfqdn()
 
-# convert comma seprated list of config_flags key1=value1, key2=value2 into dict
+
+# convert comma seprated list of config_flags into a dictionary
 @charms_openstack.adapters.config_property
 def config_flags(config):
     return dict(map(lambda x: x.split('='), config.config_flags.split(', ')))
