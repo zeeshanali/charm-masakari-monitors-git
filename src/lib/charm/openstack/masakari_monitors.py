@@ -70,7 +70,5 @@ class MasakariMonitorsCharm(charms_openstack.charm.OpenStackCharm):
         print(self.config.get('config_flags'))
         print("#### now pring config Complete  ")
         print(self.config)
-        print("#### now pring config .get  ")
-        print(self.config.config_flags)
-        return dict(map(lambda x: x.split('='), self.config.config_flags.split(', ')))
+        return dict(map(lambda x: x.split('='), self.config.get('config_flags').split(', ')))
 
