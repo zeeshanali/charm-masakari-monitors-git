@@ -3,7 +3,7 @@ options:
     type: string
     default: RegionOne
     description: OpenStack Region
-  config_flags:
+  config-flags:
     type: string
     default: key1=value1, key2=value2
     description: |
